@@ -15,4 +15,4 @@ pushd out
 zip -r swiftshader.zip swiftshader
 popd
 
-Echo "The libraries are in out/swiftshader.zip"
+echo "The libraries are in out/swiftshader.zip"
