@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  push:
+    branches:
+    - '**'
+    tags-ignore:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        python-version: [3.8]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build image
+      run: ./build-image.sh
+    - name: Build libraries
+      run: ./build-libs.sh
+
